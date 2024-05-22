@@ -16,7 +16,7 @@ class action_on_publish
     public $payload_json;
     public $response;
 
-    private $target="https://hook.eu1.make.com/l7c2pscb7m8uu77hepiqqqllstst53xu";
+    private $target;
 
 
 
@@ -44,6 +44,9 @@ class action_on_publish
         # set class variable
         $this->post = $post;
 
+        # Get target
+        $this->get_webhook_target();
+
         # create payload
         $this->build_payload();
 
@@ -52,6 +55,13 @@ class action_on_publish
     }
 
 
+    /**
+     * 
+     */
+    private function get_webhook_target()
+    {
+        $this->target = get_field('ppp_makecom_webhook_url', 'option');
+    }
 
     /**
      * Build the payload to send to the target.
@@ -90,6 +100,11 @@ class action_on_publish
      */
     private function send_webhook()
     {
+        if (!$this->target){ 
+            error_log( 'Webhook Target not set.' );
+            return;
+        }
+
         // Prepare the webhook request
         $this->response = wp_remote_post( $this->target, array(
             'method' => 'POST',
