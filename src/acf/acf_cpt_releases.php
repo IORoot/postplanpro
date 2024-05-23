@@ -11,7 +11,6 @@ class acf_cpt_releases
 
     public $singular = 'Release'; 
     public $plural = 'Releases';
-    public $svgdata_icon = 'releases';
 
     public function __construct(){
         add_action( 'init', [$this, 'register_cpt'], 8 );

@@ -14,7 +14,7 @@ class acf_options_page
     public $parent_b64_icon = 'data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMjQgMjQnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZmlsbD0nIzBkOTQ4OCcgZD0nTTE3IDdWOUgyMlY3SDE3TTIgOVYxNUg3VjlIMk0xMiA5VjExSDlWMTNIMTJWMTVMMTUgMTJMMTIgOU0xNyAxMVYxM0gyMlYxMUgxN00xNyAxNVYxN0gyMlYxNUgxN1onLz48L3N2Zz4=';
 
     public $settings;
-    public $settings_title = 'Settings';
+    public $settings_title = 'Release Settings';
 
     public $calendar;
     public $calendar_title = 'Release Calendar';
