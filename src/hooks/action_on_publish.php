@@ -10,6 +10,7 @@ namespace postplanpro\hooks;
  */
 class action_on_publish
 {
+    public $trigger;
 
     public $post;
     public $payload;
@@ -22,7 +23,7 @@ class action_on_publish
 
     public function __construct( )
     {
-        add_action( 'transition_post_status', [$this,'run'], 10, 3 );
+        add_action( 'transition_post_status', [$this,'run_to_publish'], 10, 3 );
     }
 
 
@@ -30,19 +31,23 @@ class action_on_publish
     /**
      * Checks and run.
      */
-    public function run($new_status, $old_status, $post) {
+    public function run_to_publish($new_status, $old_status, $post) {
         
         # If this isn't a 'release', skip.
         if ('release' !== $post->post_type){ return; }
 
         # If this wasn't a scheduled post, skip.
-        if ('future'  !== $old_status ){ return; }
+        // if ('future'  !== $old_status ){ return; }
 
         # If the new status isn't 'publish', skip.
         if ('publish' !== $new_status){ return; }
 
         # set class variable
         $this->post = $post;
+
+        # Trigger or not?
+        $this->trigger_setting();
+        if (!$this->trigger){ return; }
 
         # Get target
         $this->get_webhook_target();
@@ -54,6 +59,14 @@ class action_on_publish
         $this->send_webhook();
     }
 
+
+    /**
+     * 
+     */
+    private function trigger_setting()
+    {
+        $this->trigger = get_field('ppp_send_webhook', $this->post->ID);
+    }
 
     /**
      * 

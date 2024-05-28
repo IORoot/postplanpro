@@ -56,7 +56,7 @@ class acf_cpt_releases
 					'items_list_navigation' => $this->plural . ' list navigation',
 					'filter_items_list'     => 'Filter '.$this->plural.' list',
 				],
-				'supports'              => array( 'title', 'editor', 'thumbnail', 'custom-fields', 'page-attributes' ),
+				'supports'              => array( 'title', 'editor', 'thumbnail', 'custom-fields', 'page-attributes', ),
 				'hierarchical'          => true,
 				'public'                => true,
 				'show_ui'               => true,

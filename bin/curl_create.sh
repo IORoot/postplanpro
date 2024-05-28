@@ -1,10 +1,10 @@
 #!/bin/bash
 
-curl -X POST https://localhost:8443/wp-json/custom/v1/release \
+# curl -X POST https://localhost:8443/wp-json/custom/v1/release \
+curl -X POST https://630e-92-6-121-180.ngrok-free.app/wp-json/custom/v1/release \
 -H "Content-Type: application/json" \
 -H "X-API-TOKEN: alpha" \
 -d '{
-    "token": "abcdef",
     "title": "New Release Title",
     "content": "This is the content of the new release.",
     "acf": {

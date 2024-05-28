@@ -18,7 +18,6 @@ class update_gmb
     }
 
     private function create_content() {
-        $this->caption .= $this->fields['gmb']['ppp_post_header'] . PHP_EOL . PHP_EOL;
         
         if ($this->fields["release_content"] != ""){
             $this->caption .= $this->fields['release_content'] . PHP_EOL . PHP_EOL;
@@ -33,7 +32,7 @@ class update_gmb
     }
 
     private function update_content() {
-        update_field('ppp_gmb_title', $this->fields['release_title'], $this->fields["post"]->ID);
+        update_field('ppp_gmb_title', $this->fields['gmb']['ppp_post_header'], $this->fields["post"]->ID);
         update_field('ppp_gmb_summary', $this->caption, $this->fields["post"]->ID);
     }
 

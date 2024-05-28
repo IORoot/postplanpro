@@ -18,7 +18,6 @@ class update_youtube
     }
 
     private function create_content() {
-        $this->caption .= $this->fields['youtube']['ppp_post_header'] . PHP_EOL . PHP_EOL;
 
         if ($this->fields["release_content"] != ""){
             $this->caption .= $this->fields['release_content'] . PHP_EOL . PHP_EOL;
@@ -32,7 +31,7 @@ class update_youtube
     }
 
     private function update_content() {
-        update_field('ppp_youtube_title', $this->fields['release_title'], $this->fields["post"]->ID);
+        update_field('ppp_youtube_title', $this->fields['youtube']['ppp_post_header'], $this->fields["post"]->ID);
         update_field('ppp_youtube_description', $this->caption, $this->fields["post"]->ID);
         update_field('ppp_youtube_tags', $this->fields['youtube']['ppp_hashtags'], $this->fields["post"]->ID);
         update_field('ppp_youtube_publish_at', $this->fields["release_date"], $this->fields["post"]->ID);

@@ -11,7 +11,7 @@ class action_release_rest_routes
 
     public function __construct()
     {
-        add_action( 'init', [$this,'register_custom_api_endpoints'] );
+        add_action( 'rest_api_init', [$this,'register_custom_api_endpoints'] );
     }
 
 

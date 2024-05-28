@@ -38,12 +38,12 @@ class all_releases_columns
 
 
     public function custom_column_content($column, $post_id) {
-        if ($column == 'ppp_instagram_caption') { echo nl2br(get_field('ppp_instagram_caption', $post_id)); }
-        if ($column == 'ppp_youtube_caption') { echo nl2br(get_field('ppp_youtube_description', $post_id)); }
-        if ($column == 'ppp_facebook_caption') { echo nl2br(get_field('ppp_facebook_description', $post_id)); }
-        if ($column == 'ppp_twitter_caption') { echo nl2br(get_field('ppp_twitter_status', $post_id)); }
-        if ($column == 'ppp_gmb_caption') { echo nl2br(get_field('ppp_gmb_summary', $post_id)); }
-        if ($column == 'ppp_slack_caption') { echo nl2br(get_field('ppp_slack_text', $post_id)); }
+        if ($column == 'ppp_instagram_caption') { echo substr(nl2br(get_field('ppp_instagram_caption', $post_id)), 0 ,100); }
+        if ($column == 'ppp_youtube_caption') { echo substr(nl2br(get_field('ppp_youtube_description', $post_id)), 0 ,100); }
+        if ($column == 'ppp_facebook_caption') { echo substr(nl2br(get_field('ppp_facebook_description', $post_id)), 0 ,100); }
+        if ($column == 'ppp_twitter_caption') { echo substr(nl2br(get_field('ppp_twitter_status', $post_id)), 0 ,100); }
+        if ($column == 'ppp_gmb_caption') { echo substr(nl2br(get_field('ppp_gmb_summary', $post_id)), 0 ,100); }
+        if ($column == 'ppp_slack_caption') { echo substr(nl2br(get_field('ppp_slack_text', $post_id)), 0 ,100); }
     }
     
 
