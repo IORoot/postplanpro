@@ -46,10 +46,13 @@ class initialise
         new acf\acf_field_html_calendar();
 
         # When a release switches to published, run webhook
-        new hooks\action_on_publish();
+        new hooks\action_on_transition_status_change();
 
         # Register REST API Routes
         new hooks\action_release_rest_routes();
+
+        # Display the server time in the publish box.
+        new hooks\action_show_server_time();
     }
 
 

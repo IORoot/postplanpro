@@ -115,7 +115,7 @@ class acf_field_html_calendar
 
             // Get releases for the current date
             $releases = get_posts(array(
-                'post_type' => 'release',
+                'post_type' => ['release','config'],
                 'posts_per_page' => -1,
                 'order' => 'ASC',
                 'post_status' => array('publish', 'pending', 'future', 'private'),
@@ -151,7 +151,7 @@ class acf_field_html_calendar
 
                     $releaseTitles .= '<div>';
                         $releaseTitles .= '<a href="'.$edit_link.'" class="release flex flex-col md:flex-row gap-2 w-full rounded text-white bg-neutral-800 hover:bg-neutral-400 hover:text-black px-2 py-1 '.$release_schedule_classes.'">';
-                            $releaseTitles .= '<div class="release_title py-0.5">'.$release->post_title.'</div>';
+                            $releaseTitles .= '<div class="release_title py-0.5 text-xs">' . $release->post_type. " : " .$release->post_title.'</div>';
                             $releaseTitles .= '<div class="release_time bg-white rounded text-black px-2 py-0.5 ml-auto max-h-6">'.$time.'</div>';
                         $releaseTitles .= '</a>';
                     $releaseTitles .= '</div>';

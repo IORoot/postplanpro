@@ -1,53 +1,23 @@
 <?php
 
-namespace postplanpro\hooks;
+namespace postplanpro\lib;
 
 
-/**
- * This action monitors for when posts change their status.
- * If a 'release' switches to 'publish' status, send a
- * webhook off to the target with all the correct data.
- */
-class action_on_publish
+// ╭──────────────────────────────────────────────────────────────────────────╮
+// │                                                                          │░
+// │                    Send a webhook to make.com                            │░
+// │                                                                          │░
+// ╰░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+
+class send_webhook_makecom
 {
-    public $trigger;
 
     public $post;
-    public $payload;
-    public $payload_json;
-    public $response;
 
-    private $target;
-
-
-
-    public function __construct( )
+    
+    public function __construct($post)
     {
-        add_action( 'transition_post_status', [$this,'run_to_publish'], 10, 3 );
-    }
-
-
-
-    /**
-     * Checks and run.
-     */
-    public function run_to_publish($new_status, $old_status, $post) {
-        
-        # If this isn't a 'release', skip.
-        if ('release' !== $post->post_type){ return; }
-
-        # If this wasn't a scheduled post, skip.
-        // if ('future'  !== $old_status ){ return; }
-
-        # If the new status isn't 'publish', skip.
-        if ('publish' !== $new_status){ return; }
-
-        # set class variable
         $this->post = $post;
-
-        # Trigger or not?
-        $this->trigger_setting();
-        if (!$this->trigger){ return; }
 
         # Get target
         $this->get_webhook_target();
@@ -61,20 +31,14 @@ class action_on_publish
 
 
     /**
-     * 
-     */
-    private function trigger_setting()
-    {
-        $this->trigger = get_field('ppp_send_webhook', $this->post->ID);
-    }
-
-    /**
-     * 
+     * Get the setting on whether to send or not.
      */
     private function get_webhook_target()
     {
         $this->target = get_field('ppp_makecom_webhook_url', 'option');
     }
+
+
 
     /**
      * Build the payload to send to the target.
@@ -108,6 +72,7 @@ class action_on_publish
     }
 
 
+
     /**
      * Prepare the request and send the webhook.
      */
@@ -135,7 +100,5 @@ class action_on_publish
             error_log( 'Webhook sent successfully for post ID: ' . $this->post->ID );
         }
     }
-
-
 
 }
