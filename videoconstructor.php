@@ -2,9 +2,9 @@
 
 /*
  * @wordpress-plugin
- * Plugin Name:       _ANDYP - Post Plan Pro
+ * Plugin Name:       _ANDYP - Video Constructor
  * Plugin URI:        http://londonparkour.com
- * Description:       <strong>🗓️ PostPlanPro</strong> | Schedule and Auto-Post local & remote content to MAKE.COM for social platform delivery.
+ * Description:       <strong>🗓️ Video Constructor</strong> | Auto-build Videos.
  * Version:           1.0.0
  * Author:            Andy Pearson
  * Author URI:        https://londonparkour.com
@@ -18,15 +18,15 @@ require __DIR__.'/vendor/autoload.php';
 //  ┌─────────────────────────────────────────────────────────────────────────┐
 //  │                           Register CONSTANTS                            │
 //  └─────────────────────────────────────────────────────────────────────────┘
-define( 'POSTPLANPRO_PATH', __DIR__ );
-define( 'POSTPLANPRO_URL', plugins_url( '/', __FILE__ ) );
-define( 'POSTPLANPRO_FILE',  __FILE__ );
+define( 'VIDEOCONSTRUCTOR_PATH', __DIR__ );
+define( 'VIDEOCONSTRUCTOR_URL', plugins_url( '/', __FILE__ ) );
+define( 'VIDEOCONSTRUCTOR_FILE',  __FILE__ );
 
 // ┌─────────────────────────────────────────────────────────────────────────┐
 // │                        	   Initialise    		                     │
 // └─────────────────────────────────────────────────────────────────────────┘
 if (is_plugin_active('advanced-custom-fields-pro/acf.php')) {
-    $cpt = new postplanpro\initialise;
+    $cpt = new videoconstructor\initialise;
     $cpt->run();
 }
 
@@ -34,7 +34,7 @@ if (is_plugin_active('advanced-custom-fields-pro/acf.php')) {
 // ╭───────────────────────────────────────────────────────────────────────────╮
 // │                       Notices if ACF not installed                        │
 // ╰───────────────────────────────────────────────────────────────────────────╯
-class postplanpro_notices {
+class videoconstructor_notices {
     public function __construct() {
         // Add action to check required plugins on admin init
         add_action('admin_init', array($this, 'check_required_plugins'));
@@ -48,10 +48,10 @@ class postplanpro_notices {
     }
 
     public function acf_missing_notice() {
-        echo '<div class="error"><p><strong>PostPlanPro Plugin</strong> requires <strong>Advanced Custom Fields</strong> to be installed and active.</p></div>';
+        echo '<div class="error"><p><strong>videoconstructor Plugin</strong> requires <strong>Advanced Custom Fields</strong> to be installed and active.</p></div>';
     }
 
 }
 
 // Initialize the plugin
-new postplanpro_notices();
+new videoconstructor_notices();

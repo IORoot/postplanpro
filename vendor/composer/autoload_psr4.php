@@ -6,5 +6,5 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'postplanpro\\' => array($baseDir . '/src'),
+    'videoconstructor\\' => array($baseDir . '/src'),
 );
