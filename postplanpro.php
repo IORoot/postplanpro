@@ -22,6 +22,7 @@ function ppp_include_acf() {
     // Prevent conflicts if ACF is already installed
     if ( ! class_exists('ACF') ) {
         include_once plugin_dir_path(__FILE__) . 'includes/acfp/acf.php';
+        include_once plugin_dir_path(__FILE__) . 'includes/acfp-code-field/acf-code-field.php';
     }
 }
 
