@@ -1,0 +1,94 @@
+{
+    "key": "group_664a07aae9c73",
+    "title": "PPP - Releases Extra Fields",
+    "fields": [
+        {
+            "key": "field_677c3244f20a5",
+            "label": "Extra Data",
+            "name": "ppp_extra_data",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "These are extra fields that can be sent to the webhook in the JSON.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Row",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_677c32dc3c40e",
+                    "label": "Extra Data Key",
+                    "name": "ppp_extra_data_key",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Additional Values to send to webhook target",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "30",
+                        "class": "",
+                        "id": ""
+                    },
+                    "hide_admin": 0,
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_677c3244f20a5"
+                },
+                {
+                    "key": "field_677c3269f20a6",
+                    "label": "Extra Data Value",
+                    "name": "ppp_extra_data_value",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Additional Values to send to webhook target",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "70",
+                        "class": "",
+                        "id": ""
+                    },
+                    "hide_admin": 0,
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_677c3244f20a5"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "release"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1742893761
+}

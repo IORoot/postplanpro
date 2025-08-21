@@ -1,0 +1,244 @@
+{
+    "key": "group_6649f57c4a41b",
+    "title": "PPP - Releases Settings",
+    "fields": [
+        {
+            "key": "field_6649f9ae013a3",
+            "label": "Schedule",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_664a00ceef9ff",
+            "label": "Apply a Schedule",
+            "name": "ppp_release_method",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "If enabled the publication date will be updated to the given schedule.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "message": "Use a schedule",
+            "default_value": 1,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
+            "key": "field_6649f9d6ef9fe",
+            "label": "Release Schedule",
+            "name": "ppp_release_schedule",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "Pick the specific schedule you wish to apply to this release post.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_664a00ceef9ff",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "70",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "choices": {
+                "Daily Tutorials": "Daily Tutorials"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 1,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_66547340a7ce6",
+            "label": "Target",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_6654733aa7ce5",
+            "label": "Send Webhook on Schedule",
+            "name": "ppp_send_webhook",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Enable or disable sending the webhook. Overrides all other settings.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "message": "Trigger Make.com",
+            "default_value": 1,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
+            "key": "field_6658204781e72",
+            "label": "WebHook on Submit",
+            "name": "ppp_schedule_override",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Use this to send a webhook to make.com whenever you press the update button.\r\n<br\/><span style=\"color:orange;\">Note: the webhook will trigger TWICE if you have this enabled AND you change the publish date back to the past.<\/span>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "message": "Send on Update",
+            "default_value": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
+            "key": "field_677be2ba05476",
+            "label": "Target",
+            "name": "ppp_send_target",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "Set targets in settings",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "choices": {
+                "https:\/\/hook.eu1.make.com\/84n1d6iqibwla855jymsi7s8mdg2a1xl": "HowTo Videos - Social Posts",
+                "https:\/\/hook.eu1.make.com\/68a4j54uamtpl5skrexop5y1nfgusf6c": "Social Exporter V2",
+                "https:\/\/hook.eu1.make.com\/174wkdmrnqxeyeqrhnw5whsmxoxixpgc": "Test Accounts"
+            },
+            "default_value": false,
+            "return_format": "array",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 1,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_68983f01db299",
+            "label": "Reports",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_68962d98d607c",
+            "label": "Send History",
+            "name": "ppp_send_history",
+            "aria-label": "",
+            "type": "acf_code_field",
+            "instructions": "These are debug messages for when the webhook is triggered and status is changed to 'published'",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "placeholder": "",
+            "mode": "htmlmixed",
+            "theme": "monokai"
+        },
+        {
+            "key": "field_68983f73db29b",
+            "label": "Receive History",
+            "name": "ppp_receive_hist",
+            "aria-label": "",
+            "type": "acf_code_field",
+            "instructions": "These are debug messages that log any message sent to the ppp_receive_history webhook. (The make.com scenario will send to this webhook once something is complete)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "placeholder": "",
+            "mode": "htmlmixed",
+            "theme": "monokai"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "release"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "field",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1754808813
+}

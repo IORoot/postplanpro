@@ -1,0 +1,666 @@
+{
+    "key": "group_664ee59060912",
+    "title": "PPP - Extension - FFMPEG",
+    "fields": [
+        {
+            "key": "field_664f986f814d8",
+            "label": "Config",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_664ee590c5e32",
+            "label": "FFMPEG Control Config",
+            "name": "pppff_control_config",
+            "aria-label": "",
+            "type": "acf_code_field",
+            "instructions": "This is a JSON object that will control how the FFMPEG scripting works.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "{\r\n\r\n\t\"ff_download\": {\r\n\t\t\"description\": \"Download 8 Random Teen videos\",\r\n\t\t\"urlsource\": \"http:\/\/media.londonparkour.com\/clips_teens\/filelist.txt\",\r\n\t\t\"output\": \"download.mp4\",\r\n\t\t\"strategy\": \"~1\"\r\n\t},\r\n\r\n\t\"ff_thumbnail\": {\r\n\t\t\"description\": \"Make a thumbnail (should not be last step)\",\r\n\t\t\"input\": \"1_download.mp4\",\r\n\t\t\"output\": \"thumbnail.png\",\r\n\t\t\"count\": \"1\"\r\n\t},\r\n\r\n\t\"ff_blur\": {\r\n\t\t\"description\": \"Blur the square\",\r\n\t\t\"input\": \"1_download.mp4\",\r\n\t\t\"strength\": \"20\",\r\n                 \"output\": \"output.mp4\"\r\n\t},\r\n\r\n}",
+            "placeholder": "",
+            "mode": "javascript",
+            "theme": "monokai"
+        },
+        {
+            "key": "field_664f9851814d7",
+            "label": "Settings",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_6655d68c405ce",
+            "label": "GitHub Actions",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "open": 0,
+            "multi_expand": 1,
+            "endpoint": 0
+        },
+        {
+            "key": "field_664f7de53ac55",
+            "label": "Send Webhook Request",
+            "name": "pppff_webhook_enabled",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Send a webhook to GitHub Actions on publish.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "message": "",
+            "default_value": 1,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
+            "key": "field_6655d28b2456c",
+            "label": "Github Personal Access Token",
+            "name": "pppff_github_token",
+            "aria-label": "",
+            "type": "password",
+            "instructions": "This is your personal access token to access the Github API. Create within github account > settings > developer > personal access tokens. This allows you access to run the GitHub Action on your account.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_664f98ed1845a",
+            "label": "Github Action Dispatch URL",
+            "name": "github_action_dispatch_url",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "This is the URL of the Github Action to trigger. This will usually be the repo address, prepended by api.github.com and followed by \/dispatches. <a href=\"https:\/\/docs.github.com\/en\/actions\/using-workflows\/events-that-trigger-workflows#repository_dispatch\" target=\"_blank\">URL of the Github Action to trigger the run. <\/a>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "https:\/\/api.github.com\/repos\/ioroot\/video_builder\/dispatches",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "URL",
+            "append": ""
+        },
+        {
+            "key": "field_664f99501845b",
+            "label": "Github Action Dispatch Event",
+            "name": "github_action_dispatch_event",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "This is the key to trigger the github actions marked with this event.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "video_build",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "type",
+            "append": ""
+        },
+        {
+            "key": "field_664f7e293ac56",
+            "label": "Number of Instances",
+            "name": "pppff_repeats",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "Number of github runners to run in parallel",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": 1,
+            "min": 1,
+            "max": 20,
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6655d7a1cb522",
+            "label": "Google Drive Storage",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "open": 0,
+            "multi_expand": 1,
+            "endpoint": 0
+        },
+        {
+            "key": "field_6655d8efe72a6",
+            "label": "Send Result to Google Drive",
+            "name": "pppff_google_drive",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Using rClone, the Github Action will copy the final results to your google drive.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "message": "",
+            "default_value": 1,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
+            "key": "field_6654724254e31",
+            "label": "Google Drive Output Folder",
+            "name": "pppff_google_drive_output_folder",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "This is where the file is placed once the video has been created.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "\/",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "FOLDER",
+            "append": ""
+        },
+        {
+            "key": "field_6655e63eed9fc",
+            "label": "",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "message": "Make sure you have set the GitHub Secret Variable <code>RCLONE_CONF<\/code> with the contents of your <code>~\/.config\/rclone\/rclone.conf<\/code> file. The remote should be called <code>GDrive:<\/code>",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_6655d9701b2d4",
+            "label": "Webserver",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "open": 0,
+            "multi_expand": 1,
+            "endpoint": 0
+        },
+        {
+            "key": "field_6655d9881b2d5",
+            "label": "Send Result to Private Webserver using SSH",
+            "name": "pppff_webserver",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Using rClone, the Github Action will copy the final results to your google drive.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "message": "",
+            "default_value": 1,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
+            "key": "field_6655da4f8dff4",
+            "label": "SSH WebServer Domain",
+            "name": "pppff_ssh_server_domain",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "The domain you would use to SSH into your server. Including any subdomains. e.g. media.londonparkour.com",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "DOMAIN",
+            "append": ""
+        },
+        {
+            "key": "field_6655db368dff7",
+            "label": "Target Upload Folder",
+            "name": "pppff_target_upload_folder",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Path of the directory you want to upload to.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6655db678dff8",
+            "label": "Root Output URL",
+            "name": "pppff_root_output_url",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "This is the web address that will prepend the video and thumbnail addresses in the release.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6655e6b43f78f",
+            "label": "",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "message": "Make sure you have set the GitHub Secret Variable <code>SSH_USER<\/code> and <code>SSH_PASS<\/code> for access to your webserver to the folder location being uploaded to.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_6655d6c5405d0",
+            "label": "Scheduling",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "open": 0,
+            "multi_expand": 1,
+            "endpoint": 0
+        },
+        {
+            "key": "field_664f7ea8b8cda",
+            "label": "Schedule Webhook",
+            "name": "pppff_schedule_webhook",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Should you send this Webhook to Github Actions on a schedule?",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "message": "",
+            "default_value": 1,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
+            "key": "field_664f7f08b8cdb",
+            "label": "Schedule Repeat",
+            "name": "pppff_schedule_repeat",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "Once this is config is published, this is the number of minutes into the future that it will be rescheduled.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": 0,
+            "min": "",
+            "max": "",
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": "mins"
+        },
+        {
+            "key": "field_6655d6d3405d1",
+            "label": "Releases",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "open": 0,
+            "multi_expand": 1,
+            "endpoint": 0
+        },
+        {
+            "key": "field_66543811c44c0",
+            "label": "Release REST API Target URL",
+            "name": "pppff_release_rest_api_url",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Once the Github Action is complete, and the video is created and uploaded to your server\/gdrive, then you can automatically create a new release with a schedule and the video\/thumbnail as part of the content. This is the REST API target URL for creating a release. Will usually be your domain with '\/wp-json\/custom\/v1\/release' on the end.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "https:\/\/londonparkour.com\/wp-json\/custom\/v1\/release",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "URL",
+            "append": ""
+        },
+        {
+            "key": "field_66543932c44c2",
+            "label": "Release REST API TOKEN",
+            "name": "pppff_release_rest_api_token",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "This is the access token to use the REST API. You can generate API Tokens in Release Settings > Settings. You can create as many tokens as you like.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "TOKEN",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "TOKEN",
+            "append": ""
+        },
+        {
+            "key": "field_66543b7d0d622",
+            "label": "Release Schedule",
+            "name": "pppff_release_schedule",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "This is the name of the schedule to apply to the release. If this is empty, you need to create a schedule first.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "choices": [],
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 1,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_6655d6b5405cf",
+            "label": "Post Processing",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "open": 0,
+            "multi_expand": 1,
+            "endpoint": 0
+        },
+        {
+            "key": "field_664f8325c7765",
+            "label": "Bin after Processing",
+            "name": "pppff_bin_after_processing",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Trash the config once it's been published",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
+            "key": "field_6655d6fbd55f1",
+            "label": "Accordion END",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 1
+        },
+        {
+            "key": "field_665585e59f337",
+            "label": "Setup",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_665585f49f338",
+            "label": "",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "message": "<H1>Setup Steps<\/h1>\r\n\r\nTo make this work, you need to create the GitHub Action that is triggered and does the work of building your video. Clone and use the <a href=\"https:\/\/github.com\/IORoot\/video_builder\">Video Builder<\/a> project for guidance.\r\n\r\n<H1>GitHub Secret Variables<\/H1>\r\n\r\n<h3>Instagram & A Server<\/h3>\r\nOn Make.com, the instagram module requires a direct URL path to the video to download and then upload onto the instagram platform. Therefore, you'll need a server to host the file. To Access that server you'll need a valid SSH Username and Password to allow the action to copy your new video to the server. The two GitHub Secret Variables you need set are:\r\n<code>SSH_USER<\/code> and <code>SSH_PASS<\/code>\r\n\r\nAt the top of the Action, you'll see some variables that also must be changed:\r\n<code>SERVER<\/code>\r\n<code>TARGET_ROOT_FOLDER<\/code>\r\n<code>OUTPUT_URL<\/code>\r\nEnsure these are all configured correctly.\r\n\r\n<H3>YouTube Module, Google Drive & rClone<\/H3>\r\n\r\nFor the YouTube module on Make.com, it requires the video to be uploaded to your Google Drive account and a File ID to be returned so it knows which file to upload.\r\nTo Accomplish this, the rClone tool is used to allow copying the video to google drive. To enable rClone access to your google drive you'll need to supply your <code>rclone.config <\/code> contents. \r\n\r\nThe easiest way to do this is install rclone locally and set it up to work on your computer. Once working, copy the contents in <code>~\/.config\/rclone\/rclone.confg<\/code> and set a GitHub secret variable called <code>RCLONE_CONF<\/code>\r\n\r\n<H3>repository_dispatch type<\/H3>\r\n\r\nMake sure you give the github action an appropriate <code>type<\/code> so that the config can trigger that particular one.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "config"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "permalink",
+        "the_content",
+        "excerpt",
+        "custom_fields",
+        "discussion",
+        "comments",
+        "slug",
+        "author",
+        "format",
+        "page_attributes",
+        "featured_image",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ],
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1735923682
+}

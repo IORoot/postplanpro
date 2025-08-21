@@ -1,0 +1,476 @@
+{
+    "key": "group_67767703c8fb4",
+    "title": "PPP - Schedules",
+    "fields": [
+        {
+            "key": "field_6649bfc92cd3c",
+            "label": "Schedule Name",
+            "name": "ppp_schedule_name",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Used to identify each category. Will be used on the templates page.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_664b54f3a1c2d",
+            "label": "Schedule HTML Classes",
+            "name": "ppp_schedule_html_classes",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Used on the calendar. You can highlight the releases by which schedule that are a part of.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6649c03cf5ad2",
+            "label": "Schedule Day",
+            "name": "ppp_schedule_day",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "Which day should this category be posted on?",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "34",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "choices": {
+                "monday": "Monday",
+                "tuesday": "Tuesday",
+                "wednesday": "Wednesday",
+                "thursday": "Thursday",
+                "friday": "Friday",
+                "saturday": "Saturday",
+                "sunday": "Sunday"
+            },
+            "default_value": "monday",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 1,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_6649c006f5ad1",
+            "label": "Schedule Post Time",
+            "name": "ppp_schedule_post_time",
+            "aria-label": "",
+            "type": "time_picker",
+            "instructions": "What time should this category be posted?",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "display_format": "H:i:s",
+            "return_format": "H:i:s"
+        },
+        {
+            "key": "field_6649c585be1da",
+            "label": "Schedule Repeat",
+            "name": "ppp_schedule_repeat",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "Number of minutes before next post is rescheduled.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": 10080,
+            "min": 1,
+            "max": "",
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": "mins"
+        },
+        {
+            "key": "field_68205e95315e7",
+            "label": "Reschedule all Releases",
+            "name": "ppp_reschedule_all",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Use this is some releases have been removed and you want to re-schedule everything to fill those gaps in the calendar",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
+            "key": "field_67e2634515797",
+            "label": "Social Platforms",
+            "name": "ppp_social_platforms",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Add a new social platform template",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_6649c401e5e96",
+            "button_label": "Add Row",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_6649c401e5e96",
+                    "label": "Social Platform Name",
+                    "name": "ppp_social_platform_name",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Select which social platforms you wish to send your post to. This name is important because make.com will use it to select on. This will be converted to uppercase and all spaces removed when passed as data.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "30",
+                        "class": "",
+                        "id": ""
+                    },
+                    "hide_admin": 0,
+                    "default_value": "Instagram",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_67e2634515797"
+                },
+                {
+                    "key": "field_67e268e2332e0",
+                    "label": "Social Platform Posts",
+                    "name": "ppp_social_platform_posts",
+                    "aria-label": "",
+                    "type": "group",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "70",
+                        "class": "",
+                        "id": ""
+                    },
+                    "hide_admin": 0,
+                    "layout": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_67e268ad332dd",
+                            "label": "Post Template",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "hide_admin": 0,
+                            "placement": "top",
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_67e26690258c9",
+                            "label": "Template Header",
+                            "name": "ppp_social_platform_template_header",
+                            "aria-label": "",
+                            "type": "textarea",
+                            "instructions": "This will be above your post content.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "hide_admin": 0,
+                            "default_value": "",
+                            "maxlength": "",
+                            "rows": 3,
+                            "placeholder": "",
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_67e267a4dc2ef",
+                            "label": "Template Footer",
+                            "name": "ppp_social_platform_template_footer",
+                            "aria-label": "",
+                            "type": "textarea",
+                            "instructions": "This will be placed below the content of your post",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "hide_admin": 0,
+                            "default_value": "",
+                            "maxlength": "",
+                            "rows": 3,
+                            "placeholder": "",
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_67e268226efd1",
+                            "label": "Template Hashtags",
+                            "name": "ppp_social_platform_template_hashtags",
+                            "aria-label": "",
+                            "type": "textarea",
+                            "instructions": "Hashtags will be added below your footer.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "hide_admin": 0,
+                            "default_value": "",
+                            "maxlength": "",
+                            "rows": 1,
+                            "placeholder": "",
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_67e269b9d4d15",
+                            "label": "Additional Fields",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "hide_admin": 0,
+                            "placement": "top",
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_67e26a05d4d17",
+                            "label": "Additional Fields",
+                            "name": "ppp_social_platform_additional_fields",
+                            "aria-label": "",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "hide_admin": 0,
+                            "layout": "table",
+                            "pagination": 0,
+                            "min": 0,
+                            "max": 0,
+                            "collapsed": "",
+                            "button_label": "Add Row",
+                            "rows_per_page": 20,
+                            "sub_fields": [
+                                {
+                                    "key": "field_67e269d6d4d16",
+                                    "label": "Field Title",
+                                    "name": "ppp_schedule_social_platform_additional_field_title",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "30",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "hide_admin": 0,
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_67e26a05d4d17"
+                                },
+                                {
+                                    "key": "field_67e26a12d4d18",
+                                    "label": "Field Content",
+                                    "name": "ppp_schedule_social_platform_additional_field_content",
+                                    "aria-label": "",
+                                    "type": "textarea",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "70",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "hide_admin": 0,
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "rows": 4,
+                                    "placeholder": "",
+                                    "new_lines": "",
+                                    "parent_repeater": "field_67e26a05d4d17"
+                                }
+                            ]
+                        },
+                        {
+                            "key": "field_67e2e107cefc8",
+                            "label": "Preview Settings",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "hide_admin": 0,
+                            "placement": "top",
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_67e2e118cefc9",
+                            "label": "Preview Classes",
+                            "name": "ppp_social_platform_preview_classes",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "Tailwind classes to add to the preview window on the release page.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "hide_admin": 0,
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_67f3870ff1f50",
+                            "label": "Details",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "hide_admin": 0,
+                            "placement": "top",
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_67f3872ef1f51",
+                            "label": "Character Limit",
+                            "name": "ppp_social_platform_character_limit",
+                            "aria-label": "",
+                            "type": "number",
+                            "instructions": "The final output of the content will be trimmed to this length.<br\/>\r\nInstagram = 2200, YouTube = 5000, FaceBook =",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "hide_admin": 0,
+                            "default_value": 10000,
+                            "min": "",
+                            "max": "",
+                            "placeholder": "",
+                            "step": "",
+                            "prepend": "",
+                            "append": ""
+                        }
+                    ],
+                    "parent_repeater": "field_67e2634515797"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "schedule"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1746952112
+}

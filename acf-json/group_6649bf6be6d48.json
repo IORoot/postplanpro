@@ -1,0 +1,250 @@
+{
+    "key": "group_6649bf6be6d48",
+    "title": "PPP - Settings",
+    "fields": [
+        {
+            "key": "field_6780e1c662435",
+            "label": "Send in Dev Mode",
+            "name": "ppp_send_in_dev",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "If enabled, then localhost will be able to send the webhook. Otherwise, the sending of the webhook will be disabled.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
+            "key": "field_677be308b38b3",
+            "label": "Targets",
+            "name": "ppp_targets",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Row",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_677be31eb38b4",
+                    "label": "Target Name",
+                    "name": "ppp_target_name",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Unique name to reference in the release",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "hide_admin": 0,
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_677be308b38b3"
+                },
+                {
+                    "key": "field_677be32db38b5",
+                    "label": "Target URL",
+                    "name": "ppp_target_url",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "This is the webhook URL to send the release to when published",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "hide_admin": 0,
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_677be308b38b3"
+                }
+            ]
+        },
+        {
+            "key": "field_664da12bf110f",
+            "label": "API Tokens",
+            "name": "ppp_api_tokens",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "These tokens can be used to access the REST API to create or update a release.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Row",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_664da13ef1110",
+                    "label": "API Token",
+                    "name": "ppp_api_token",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "hide_admin": 0,
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_664da12bf110f"
+                }
+            ]
+        },
+        {
+            "key": "field_67e2cc1676bd7",
+            "label": "Global Variables",
+            "name": "ppp_global_variables",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "These values will be added to all JSON outputs to webhooks",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Row",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_67e2cc3976bd8",
+                    "label": "Field Name",
+                    "name": "ppp_global_field_name",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "30",
+                        "class": "",
+                        "id": ""
+                    },
+                    "hide_admin": 0,
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_67e2cc1676bd7"
+                },
+                {
+                    "key": "field_67e2cc5076bd9",
+                    "label": "Field Value",
+                    "name": "ppp_global_field_value",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "70",
+                        "class": "",
+                        "id": ""
+                    },
+                    "hide_admin": 0,
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_67e2cc1676bd7"
+                }
+            ]
+        },
+        {
+            "key": "field_66545c7c46221",
+            "label": "Introduction",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "message": "<h3>Welcome to PostPlanPro<\/h3>\r\n\r\nThis plugin is used to schedule posts \/ media to social platforms.\r\n\r\n<h3>Prerequisites<\/h3>\r\n\r\n1. Wordpress\r\n2. ACF Pro (Needs pro features - repeater)\r\n3. Make.com Scenario\r\n\r\n\r\n<h3>Intro<\/h3>\r\n\r\nThis plugin is actually two parts in one. \r\n\r\nThe main part, the 'releases' are used to generate content for social platforms based on a template. \r\nThe release is scheduled on a specific timeframe and will publish itself when that date\/time is in the past.\r\n\r\nThe second plugin (postplanpro_ffmpeg), the scriptflow configs, is a special control and trigger for a github action. That action will take the config and \r\nprogrammatically generate a video to be used in a release. \r\nOnce the video is created the github action will call the wordpress REST API to generate a new release using the location of the new video it created and assign it to the specified config schedule.\r\n\r\nUsing these two plugins it is possible to auto-generate a complete social media presence with scheduled posts containing unique videos.\r\n\r\nOnce the release is published, a webhook is sent to Make.com with all of the content generated. A Make.com scenario will then be triggered and use the data to publish to all the social platforms.\r\n\r\n<h3>Curl Create \/ Update<\/h3>\r\nMake sure the URL for the POST Target is <code>https:\/\/localhost:8443\/wp-json\/custom\/v1\/release<\/code> replacing localhost:port withyour own domain.\r\n\r\n<h3>Workflow<\/h3>\r\n\r\nSee the diagram below for a visual representation of how the system works.\r\n\r\n<img src=\"\/wp-content\/plugins\/wp-plugin__postplanpro\/src\/help\/workflow_new.png\" style=\"width:100%\" >",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "ppp_settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1742916747
+}

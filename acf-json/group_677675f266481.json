@@ -1,0 +1,151 @@
+{
+    "key": "group_677675f266481",
+    "title": "PPP - Templates",
+    "fields": [
+        {
+            "key": "field_6649d0fbab36d",
+            "label": "Template Name",
+            "name": "ppp_template_name",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "This is just used for reference.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6649cf17bd284",
+            "label": "Template Header",
+            "name": "ppp_post_header",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "This will be at the top of the text of your post",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "maxlength": "",
+            "rows": 2,
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_6649d04abd287",
+            "label": "Fallback Title",
+            "name": "ppp_fallback_title",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "If no title is supplied with the post, then this is what will be used.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "maxlength": "",
+            "rows": 2,
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_6649d084bd288",
+            "label": "Fallback Description",
+            "name": "ppp_fallback_description",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "If no description is supplied with the post, then this is what will be used.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "maxlength": "",
+            "rows": 4,
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_6649cfc7bd285",
+            "label": "Template Footer",
+            "name": "ppp_post_footer",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "This will be at the bottom of the text of your post",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "maxlength": "",
+            "rows": 8,
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_6649cfe9bd286",
+            "label": "Hashtags",
+            "name": "ppp_hashtags",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Instagram only allows a maximum of 30 tags in a post.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "#fitness",
+            "maxlength": "",
+            "rows": 2,
+            "placeholder": "",
+            "new_lines": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "template"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1742889494
+}

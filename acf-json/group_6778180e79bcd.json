@@ -1,0 +1,291 @@
+{
+    "key": "group_6778180e79bcd",
+    "title": "PPP - Extension - Auto Generator",
+    "fields": [
+        {
+            "key": "field_677819b3df9d3",
+            "label": "WP_QUERY Arguments",
+            "name": "ppp_gen_wp_query_args",
+            "aria-label": "",
+            "type": "acf_code_field",
+            "instructions": "Use this WP_QUERY To generate the list of results to populate the releases with.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "70",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "[\r\n            'post_type'      => 'posts',\r\n            'post_status'    => 'publish', \r\n            'posts_per_page' => -1,       \r\n]",
+            "placeholder": "",
+            "mode": "javascript",
+            "theme": "monokai"
+        },
+        {
+            "key": "field_677ce20baf350",
+            "label": "Check for Duplicates",
+            "name": "ppp_gen_duplicate_check",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "If true, a check for an existing release will stop a new release from being created if it is the same.\r\nIf false, no check for existing releases will happen and a new release will be created for the same results.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "message": "",
+            "default_value": 1,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
+            "key": "field_677cfde985d59",
+            "label": "Moustaches",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "message": "For each post returned, it also has the any ACF fields attached. \r\n1. Use {{post_title}} or any other field {{published_date}}. \r\n2. For ACF Fields use {{acf_field_name}}.\r\n3. Use {{category}} or {{tags}} taxonomies (or the CPT taxonomies) to get CSV list of associated terms.\r\n4. Use {{image}} for featured image.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_6778180edf9cb",
+            "label": "Release Title",
+            "name": "ppp_gen_release_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6778189bdf9cc",
+            "label": "Release Content",
+            "name": "ppp_gen_release_content",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "maxlength": "",
+            "rows": "",
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_6778197edf9d2",
+            "label": "Release Apply Schedule",
+            "name": "ppp_gen_release_method",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "message": "",
+            "default_value": 1,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
+            "key": "field_677818c6df9cd",
+            "label": "Release Schedule",
+            "name": "ppp_gen_release_schedule",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "70",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "choices": {
+                "Test - new layout": "Test - new layout"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_6778195adf9d1",
+            "label": "Release Send Webhook",
+            "name": "ppp_gen_send_webhook",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "message": "",
+            "default_value": 1,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
+            "key": "field_677befa560da2",
+            "label": "Release Target",
+            "name": "ppp_gen_send_target",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "70",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "choices": {
+                "https:\/\/hook.eu1.make.com\/84n1d6iqibwla855jymsi7s8mdg2a1xl": "HowTo Videos - Social Posts",
+                "https:\/\/hook.eu1.make.com\/68a4j54uamtpl5skrexop5y1nfgusf6c": "Social Exporter V2"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 1,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_677c33425c8c7",
+            "label": "Extra Data",
+            "name": "ppp_gen_extra_data",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Row",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_677c33785c8c8",
+                    "label": "Extra Data Key",
+                    "name": "ppp_gen_extra_data_key",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "30",
+                        "class": "",
+                        "id": ""
+                    },
+                    "hide_admin": 0,
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_677c33425c8c7"
+                },
+                {
+                    "key": "field_677c33895c8c9",
+                    "label": "Extra Data Value",
+                    "name": "ppp_gen_extra_data_value",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "70",
+                        "class": "",
+                        "id": ""
+                    },
+                    "hide_admin": 0,
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_677c33425c8c7"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "generator"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1742921490
+}
