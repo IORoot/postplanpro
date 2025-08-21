@@ -13,6 +13,9 @@ class acf_field_html_calendar
         # Render the Calendar in the Custom HTML field
         add_filter('acf/render_field/type=custom_html', [$this,'render_calendar'], 10, 1);
 
+        # Force the calendar page to use single column layout
+        add_action('admin_head', [$this, 'force_single_column_layout']);
+
     }
 
 
@@ -42,6 +45,22 @@ class acf_field_html_calendar
     
     }
 
+
+    /**
+     * Force the calendar page to use single column layout
+     * This prevents the calendar from being split across multiple columns
+     */
+    public function force_single_column_layout() {
+        $screen = get_current_screen();
+        
+        // Check if we're on the calendar options page
+        if ($screen && $screen->id === 'postplanpro_page_ppp_calendar') {
+            // Force single column layout
+            add_filter('get_user_option_screen_layout_' . $screen->id, function() {
+                return 1;
+            });
+        }
+    }
 
 
     public function render_calendar($field) {
