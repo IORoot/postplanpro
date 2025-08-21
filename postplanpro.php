@@ -17,6 +17,7 @@
 // └─────────────────────────────────────────────────────────────────────────┘
 // Load ACF from plugin folder if it’s not already active
 add_action('plugins_loaded', 'ppp_include_acf');
+add_action('plugins_loaded', 'ppp_include_ppp_generator');
 
 function ppp_include_acf() {
     // Prevent conflicts if ACF is already installed
@@ -24,6 +25,10 @@ function ppp_include_acf() {
         include_once plugin_dir_path(__FILE__) . 'includes/acfp/acf.php';
         include_once plugin_dir_path(__FILE__) . 'includes/acfp-code-field/acf-code-field.php';
     }
+}
+
+function ppp_include_ppp_generator() {
+    include_once plugin_dir_path(__FILE__) . 'includes/postplanpro_generator/postplanpro_generator.php';
 }
 
 // Hide ACF from the plugins list
