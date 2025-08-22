@@ -123,7 +123,7 @@
             "name": "ppp_reschedule_all",
             "aria-label": "",
             "type": "true_false",
-            "instructions": "Use this is some releases have been removed and you want to re-schedule everything to fill those gaps in the calendar",
+            "instructions": "Use this if some releases have been removed and you want to re-schedule everything to fill those gaps in the calendar",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -131,7 +131,6 @@
                 "class": "",
                 "id": ""
             },
-            "hide_admin": 0,
             "message": "",
             "default_value": 0,
             "ui_on_text": "",
@@ -199,6 +198,7 @@
                     },
                     "hide_admin": 0,
                     "layout": "block",
+                    "parent_repeater": "field_67e2634515797",
                     "sub_fields": [
                         {
                             "key": "field_67e268ad332dd",
@@ -448,8 +448,7 @@
                             "prepend": "",
                             "append": ""
                         }
-                    ],
-                    "parent_repeater": "field_67e2634515797"
+                    ]
                 }
             ]
         }
@@ -472,5 +471,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1746952112
+    "modified": 1755853697
 }

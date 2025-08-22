@@ -2,7 +2,7 @@
 
 /*
  * @wordpress-plugin
- * Plugin Name:       _ANDYP - Post Plan Pro
+ * Plugin Name:       Post Plan Pro
  * Plugin URI:        http://londonparkour.com
  * Description:       <strong>🗓️ PostPlanPro</strong> | Schedule and Auto-Post local & remote content to MAKE.COM for social platform delivery.
  * Version:           2.0.0
@@ -32,12 +32,12 @@ function ppp_include_ppp_generator() {
 }
 
 // Hide ACF from the plugins list
-add_filter('all_plugins', function($plugins) {
-    if ( isset($plugins['includes/acf/acf.php']) ) {
-        unset($plugins['includes/acf/acf.php']);
-    }
-    return $plugins;
-});
+// add_filter('all_plugins', function($plugins) {
+//     if ( isset($plugins['includes/acf/acf.php']) ) {
+//         unset($plugins['includes/acf/acf.php']);
+//     }
+//     return $plugins;
+// });
 
 // Save ACF field groups in your plugin folder
 add_filter('acf/settings/save_json', function($path) {
@@ -50,7 +50,7 @@ add_filter('acf/settings/load_json', function($paths) {
     return $paths;
 });
 
-add_filter('acf/settings/show_admin', '__return_false');
+// add_filter('acf/settings/show_admin', '__return_false');
 
 
 // ┌─────────────────────────────────────────────────────────────────────────┐

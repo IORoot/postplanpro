@@ -45,7 +45,7 @@ class all_releases_columns
         // $reordered_columns['ppp_social_platforms'] = __('Social Platforms', 'your-text-domain');
         $reordered_columns['ppp_youtube_id'] = __('YouTube Link', 'your-text-domain');
         $reordered_columns['ppp_youtube_thumbnail'] = __('YouTube Thumbnail', 'your-text-domain');
-        $reordered_columns['ppp_award_level'] = __('Award Level', 'your-text-domain');
+        // $reordered_columns['ppp_award_level'] = __('Award Level', 'your-text-domain');
         $reordered_columns['ppp_run_webhook'] = __('Run', 'your-text-domain');
         return $reordered_columns;
     }

@@ -30,11 +30,10 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "30",
+                "width": "25",
                 "class": "",
                 "id": ""
             },
-            "hide_admin": 0,
             "message": "Use a schedule",
             "default_value": 1,
             "ui_on_text": "",
@@ -59,13 +58,12 @@
                 ]
             ],
             "wrapper": {
-                "width": "70",
+                "width": "47",
                 "class": "",
                 "id": ""
             },
-            "hide_admin": 0,
             "choices": {
-                "Daily Tutorials": "Daily Tutorials"
+                "test": "test"
             },
             "default_value": false,
             "return_format": "value",
@@ -150,11 +148,7 @@
                 "id": ""
             },
             "hide_admin": 0,
-            "choices": {
-                "https:\/\/hook.eu1.make.com\/84n1d6iqibwla855jymsi7s8mdg2a1xl": "HowTo Videos - Social Posts",
-                "https:\/\/hook.eu1.make.com\/68a4j54uamtpl5skrexop5y1nfgusf6c": "Social Exporter V2",
-                "https:\/\/hook.eu1.make.com\/174wkdmrnqxeyeqrhnw5whsmxoxixpgc": "Test Accounts"
-            },
+            "choices": [],
             "default_value": false,
             "return_format": "array",
             "multiple": 0,
@@ -240,5 +234,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1754808813
+    "modified": 1755853317
 }

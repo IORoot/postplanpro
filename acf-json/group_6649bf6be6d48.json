@@ -3,6 +3,23 @@
     "title": "PPP - Settings",
     "fields": [
         {
+            "key": "field_68a8342db461f",
+            "label": "Settings",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
             "key": "field_6780e1c662435",
             "label": "Send in Dev Mode",
             "name": "ppp_send_in_dev",
@@ -209,6 +226,23 @@
             ]
         },
         {
+            "key": "field_68a8343ab4620",
+            "label": "Help",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
             "key": "field_66545c7c46221",
             "label": "Introduction",
             "name": "",
@@ -222,8 +256,42 @@
                 "class": "",
                 "id": ""
             },
-            "hide_admin": 0,
-            "message": "<h3>Welcome to PostPlanPro<\/h3>\r\n\r\nThis plugin is used to schedule posts \/ media to social platforms.\r\n\r\n<h3>Prerequisites<\/h3>\r\n\r\n1. Wordpress\r\n2. ACF Pro (Needs pro features - repeater)\r\n3. Make.com Scenario\r\n\r\n\r\n<h3>Intro<\/h3>\r\n\r\nThis plugin is actually two parts in one. \r\n\r\nThe main part, the 'releases' are used to generate content for social platforms based on a template. \r\nThe release is scheduled on a specific timeframe and will publish itself when that date\/time is in the past.\r\n\r\nThe second plugin (postplanpro_ffmpeg), the scriptflow configs, is a special control and trigger for a github action. That action will take the config and \r\nprogrammatically generate a video to be used in a release. \r\nOnce the video is created the github action will call the wordpress REST API to generate a new release using the location of the new video it created and assign it to the specified config schedule.\r\n\r\nUsing these two plugins it is possible to auto-generate a complete social media presence with scheduled posts containing unique videos.\r\n\r\nOnce the release is published, a webhook is sent to Make.com with all of the content generated. A Make.com scenario will then be triggered and use the data to publish to all the social platforms.\r\n\r\n<h3>Curl Create \/ Update<\/h3>\r\nMake sure the URL for the POST Target is <code>https:\/\/localhost:8443\/wp-json\/custom\/v1\/release<\/code> replacing localhost:port withyour own domain.\r\n\r\n<h3>Workflow<\/h3>\r\n\r\nSee the diagram below for a visual representation of how the system works.\r\n\r\n<img src=\"\/wp-content\/plugins\/wp-plugin__postplanpro\/src\/help\/workflow_new.png\" style=\"width:100%\" >",
+            "message": "<h3>Welcome to PostPlanPro<\/h3>\r\n\r\nThis plugin is used to schedule posts \/ media to social platforms.\r\n\r\n<h3>Prerequisites<\/h3>\r\n\r\n1. Wordpress\r\n2. ACF Pro (Needs pro features - repeater)\r\n3. Make.com Scenario\r\n\r\n\r\n<h3>Intro<\/h3>\r\n\r\nThis plugin is actually two parts in one. \r\n\r\nThe main part, the 'releases' are used to generate content for social platforms based on a template. \r\nThe release is scheduled on a specific timeframe and will publish itself when that date\/time is in the past.\r\n\r\nThe second plugin (postplanpro_generator), is used to generate the content for the releases.\r\n\r\nUsing these two plugins it is possible to auto-generate a complete social media presence with scheduled posts containing unique videos.\r\n\r\nOnce the release is published, a webhook is sent to Make.com with all of the content generated. A Make.com scenario will then be triggered and use the data to publish to all the social platforms.\r\n\r\n<h3>Curl Create \/ Update<\/h3>\r\nMake sure the URL for the POST Target is <code>https:\/\/localhost:8443\/wp-json\/custom\/v1\/release<\/code> replacing localhost:port withyour own domain.\r\n\r\n<hr\/>\r\n\r\n<h3>Basic Workflow<\/h3>\r\n\r\nSee the diagram below for a basic visual representation of how the system works. The release will have a publish date and time that is set by the schedule. When the publish date\/time is in the past, the release will be published and the webhook will be sent to Make.com.\r\n\r\n<img src=\"\/wp-content\/plugins\/wp-plugin__postplanpro\/src\/help\/steps.png\" style=\"width:100%\" >\r\n\r\n<hr\/>\r\n\r\n<h3>Schedules<\/h3>\r\n\r\nThe schedule is used to determine when to post the release. When the next release is added and the schedule is set, the release will be scheduled for the next available date\/time based on the schedule. You can see the releases in the calendar view.\r\n\r\n<img src=\"\/wp-content\/plugins\/wp-plugin__postplanpro\/src\/help\/schedule.png\" style=\"width:100%\" >\r\n\r\n<hr\/>\r\n\r\n<h3>Social Platforms<\/h3>\r\n\r\nThe schedule can also be used to determine which social platforms to post to. You can select multiple social platforms, but a single template per platform. You can specify the character limit for the post, the template to use and the hashtags to use. Add headers, footers and hashtags to the template to be used. You can also use custom fields to populate the post to be sent to make.com.\r\n\r\nFor instance, YouTube requires a 'youtube_published_date' field to be populated. This is used to set the publish date for the video.\r\n\r\nNote: The custom fields have titles and content. The title is used as the field name in the json data sent to make.com. The content is used to populate the field. The content can use moustache brackets to reference other fields. For instance, if you want to use the title of the release in the post, you can use {{post_title}} in the content. The 'youtube_published_date' field could reference the {{post_date}} field. \r\n\r\n<img src=\"\/wp-content\/plugins\/wp-plugin__postplanpro\/src\/help\/social_platforms.png\" style=\"width:100%\" >",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_68a83db1e7e49",
+            "label": "Features",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_68a83dbde7e4b",
+            "label": "",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "<h2 style=\"text-align: center; font-size: 24px; font-weight: bold; margin-bottom: 20px;\">Key Features<\/h2>\r\n\r\n<h3>All Releases Page<\/h3>\r\n<ul style=\"list-style-type: disc; padding-left: 20px;\">\r\n    <li>Add New Release<\/li>\r\n    <li>View Column : Time Until Publish<\/li>\r\n    <li>View Column : YouTube Link<\/li>\r\n    <li>View Column : YouTube Thumbnail<\/li>\r\n    <li>Run Column  : Manually run the webhook for the release<\/li>\r\n    <li>Bulk Action : Change Send Target<\/li>\r\n    <li>Bulk Action : Change Release Schedule<\/li>\r\n<\/ul>\r\n\r\n<hr\/>\r\n<h3>Release Page<\/h3>\r\n<ul style=\"list-style-type: disc; padding-left: 20px;\">\r\n    <li>Toggle: Apply a schedule to the release. Disable to publish immediately.<\/li>\r\n    <li>Schedule : Specify the scedule to apply to the release<\/li>\r\n    <li>Target Toggle : Enable or disable the sending to the webhook target on publish<\/li>\r\n    <li>Webhook on Submit : Use to manually run the webhook for the release whenever you click the update button<\/li>\r\n    <li>Target : Specify the webhook target to send the release to. These are defined in settings.<\/li>\r\n    <li>Send History : This records the last time the webhook was sent to the target and any responses.<\/li>\r\n    <li>Recieve History : These are debug messages that log any message sent to the ppp_receive_history webhook.<\/li>\r\n    <li>Extra Fields : These fields are extra data to send to the webhook target. These can be populated using the auto Generator.<\/li>\r\n    <li>Post Preview : Simple previews of the post on different social platforms.<\/li>\r\n    <li>JSON : This is the constructed JSON that will be sent to the webhook target.<\/li>\r\n    <li>Preview HTML : The HTML used to render the Post Previews.<\/li>\r\n    <li>Now : The current server time is shown below the publish date\/time.<\/li>\r\n    <li>Publish date : This is when the release will be published and the JSON will be sent to the webhook target.<\/li>\r\n<\/ul>\r\n\r\n<hr\/>\r\n<h3>Schedule Page<\/h3>\r\n<ul style=\"list-style-type: disc; padding-left: 20px;\"><\/ul>\r\n    <li>Schedule Title: Just the title of the schedule. This is used to identify the schedule in the list page.<\/li>\r\n    <li>Schedule Name: This is used to populate the select box in the release page.<\/li>\r\n    <li>Schedule HTML Classes: This is used to highlight the schedule in the calendar page.<\/li>\r\n    <li>Schedule Day: The next day the schedule will post on. This is used to calculate the publish date\/time.<\/li>\r\n    <li>Schedule Post Time: The time of day the schedule will post on. This is used to calculate the publish date\/time.<\/li>\r\n    <li>Schedule Repeat: The number of minutes between posts. This is used to calculate the publish date\/time and the repeating loop of the schedule.<\/li>\r\n    <li>Reschedule All: Used to reschedule all releases to the next available date\/time based on the schedule. If you remove some releases from the schedule, you can use this to reschedule everything to fill gaps in the calendar.<\/li>\r\n    <li>Social Platforms: Add multiple social platform templates here to add to the release based on the release data.<\/li>\r\n    <li>Social Platform Name: The name of the social platform. This is used to identify the social platform in the release page.<\/li>\r\n    <li>Social Platform Character Limit: The character limit for the social platform. This is used to limit the length of the post.<\/li>\r\n    <li>Social Platform Template Header: The header of the template. This is used to wrap around the main content.<\/li>\r\n    <li>Social Platform Template Footer: The footer of the template. This is used to wrap around the main content.<\/li>\r\n    <li>Social Platform Template Hashtags: The hashtags of the template. This is used to add hashtags to the post.<\/li>\r\n    <li>Social Platform Additional Fields - Title: Add extra fields to the JSON that will be sent to the webhook target.<\/li>\r\n    <li>Social Platform Additional Fields - Content: Add extra fields to the JSON that will be sent to the webhook target. This field can use {{MOUSTACHE}} to reference other fields.<\/li>\r\n    <li>Social Platform Preview Classes :Add tailwind classes to the preview HTML on the release page.<\/li>\r\n<\/ul>\r\n\r\n<hr\/>\r\n<h3>All Auto Generators Page<\/h3>\r\n<ul style=\"list-style-type: disc; padding-left: 20px;\"><\/ul>\r\n    <li>Add New Generator<\/li>  \r\n    <li>Duplicate Column : Duplicate the generator easily with all of the settings.<\/li>  \r\n    <li>Bulk Action - Change Send Target : Update the send target for all selected generators.<\/li>  \r\n    <li>Bulk Action - Change Release Schedule : Update the release schedule for all selected generators.<\/li>  \r\n<\/ul>\r\n\r\n\r\n<hr\/>\r\n<h3>Auto Generator Page<\/h3>\r\n<ul style=\"list-style-type: disc; padding-left: 20px;\"><\/ul>\r\n    <li>WP_Query Arguments : This is the WP_Query arguments that will be used to generate the releases. Any results from the query will create a new release. This is a JSON code block that will be evaluated to generate the releases. You can use <a target=\"_blank\" href=\"https:\/\/crocoblock.com\/freemium\/tools\/wp-query-generator\/\">this tool<\/a> to generate the code, or build it yourself using the wordpress docs <a target=\"_blank\" href=\"https:\/\/developer.wordpress.org\/reference\/classes\/wp_query\/\">here<\/a>.<\/li>  \r\n    <li>Check for Duplicates : If an existing release is found with the same title, the generator will not create a new release.<\/li>  \r\n    <li>Release Title : Use {{moustache}} to reference the post title. or add things to it. \"Tutorial: {{post_title}}\" will create a title like \"Tutorial: My Post Title\"<\/li>  \r\n    <li>Release Content : Use {{moustache}} to reference the post content. or add things to it. \"{{post_content}}\" will create a content like \"This is the content of the post\"<\/li>  \r\n    <li>Release Apply Schedule : If enabled, the release will be applied to the schedule. If disabled, the release will be published immediately.<\/li>  \r\n    <li>Release Schedule : The schedule to apply to the release. This is used to populate the schedule select box in the release page.<\/li>  \r\n    <li>Release Send Webhook : If enabled, the release will be sent to the webhook target on publish.<\/li>  \r\n    <li>Release Target : The target webhook to send the release to. These are defined in settings.<\/li> \r\n    <li>Extra Data : Key - Value pairs to add to the JSON that will be sent to the webhook target. You can use {{moustache}} to reference other fields.<\/li> \r\n    <li>Update : Once the update button is pressed, the generator will run and create the releases.<\/li>\r\n<\/ul>\r\n\r\n\r\n<hr\/>\r\n<h3>Calendar Page<\/h3>\r\n<ul style=\"list-style-type: disc; padding-left: 20px;\"><\/ul>\r\n    <li>Calendar : This is the calendar view of the releases. You can see the releases and their scheduled date\/time.<\/li>\r\n    <li>Change Month : Click left \/ right button to change month<\/li>\r\n    <li>Schedule Legend : This is the legend of the differentschedules. You can see the schedules and their colors.<\/li>\r\n    <li>Releases : Listed and clickable. Click to view the release page.<\/li>\r\n<\/ul>\r\n\r\n<hr\/>\r\n<h3>Settings Page<\/h3>\r\n<ul style=\"list-style-type: disc; padding-left: 20px;\"><\/ul>\r\n    <li>Send in Dev Mode : If enabled, then localhost will be able to send the webhook. Otherwise, the sending of the webhook will be disabled.<\/li>\r\n    <li>Targets : These are the webhook target URLsthat will be used to send the webhook to. You can add multiple targets here. Once the Make.com scenario has been built, you'll be able to get the webhook address to enter in here. Use the bulk-actions on the releases to change the target - useful for demo and test targets.<\/li>\r\n    <li>API Tokens : These are words or tokens you define (it can be anything) that will be used to access the REST API to create or update a release. You can create or update (POST\/PUT) a release using the REST API. You can create as many tokens as you like.<\/li>\r\n    <li>Global Variables : These are key-value pairs that will be added to the JSON on every release. Handy for static data that you want to add to every release.<\/li>\r\n    <li>Help : General help and support information.<\/li>\r\n    <li>Feature : This page<\/li>\r\n<\/ul>",
             "new_lines": "wpautop",
             "esc_html": 0
         }
@@ -246,5 +314,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1742916747
+    "modified": 1755858880
 }
